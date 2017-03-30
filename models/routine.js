@@ -41,4 +41,12 @@ Routine.createRT = (routine) => {
   ]);
 };
 
+Routine.showAll = (routines) => {
+  return db.manyOrNone(`
+    SELECT *
+    FROM routines`,
+    [routines]
+  );
+};
+
 module.exports = Routine;
