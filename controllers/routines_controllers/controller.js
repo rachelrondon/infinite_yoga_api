@@ -15,6 +15,7 @@ controller.createRT = (req, res) => {
   Routine
   .createRT(req.body.routine)
   .then((routine) => {
+    console.log(routine);
     res
     .sendStatus(201)
     .json(routine);
