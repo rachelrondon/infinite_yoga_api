@@ -10,6 +10,14 @@ controller.showRT = (req, res) => {
   .catch(err => console.log('ERROR:', err));
 }
 
+controller.showOne = (req, res) => {
+  Routine
+  .findById(req.params.id)
+  .then( data => {
+    res.json(data);
+  })
+}
+
 controller.createRT = (req, res) => {
   console.log(req.body);
   Routine
