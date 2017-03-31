@@ -18,6 +18,22 @@ controller.showOne = (req, res) => {
   })
 }
 
+controller.level = (req, res) => {
+  Routine
+  .findByLevel(req.body.level)
+  .then(data => {
+    res.json(data);
+  })
+}
+
+controller.search = (req, res) => {
+  Routine
+  .search(`%${req.query.search}%`)
+  .then( data => {
+    res.json(data);
+  })
+}
+
 controller.createRT = (req, res) => {
   console.log(req.body);
   Routine
