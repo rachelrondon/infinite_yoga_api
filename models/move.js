@@ -12,4 +12,5 @@ Move.showAll = (moves) => {
   );
 };
 
+
 module.exports = Move;

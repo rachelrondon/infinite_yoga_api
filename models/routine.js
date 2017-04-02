@@ -39,16 +39,5 @@ Routine.findById = (id) => {
   );
 }
 
-Routine.findByLevel = (level) => {
-  console.log(level);
-  return db.any(`
-    SELECT *
-    FROM routines.title, routines.level, moves.name, moves.image, moves.milliseconds, moves.audio
-    FROM routines
-    LEFT JOIN moves
-    ON routines.id = $1 AND moves.routine_id = $1`,
-    [level]
-  );
-}
 
 module.exports = Routine;
