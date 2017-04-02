@@ -7,6 +7,7 @@ CREATE TABLE routines (
   id BIGSERIAL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   level VARCHAR(255) NOT NULL,
+  session VARCHAR(255) NOT NULL,
   thumbnail VARCHAR(500) NOT NULL
 );
 
