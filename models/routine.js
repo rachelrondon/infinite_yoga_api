@@ -13,6 +13,15 @@ Routine.search = (data) => {
     [data]
   );
 }
+
+Routine.findByLevel = (level) => {
+  return db.any(`
+    SELECT *
+    FROM routines
+    WHERE level = $1`,
+  [level]
+  );
+}
  // return db.manyOrNone(`
  //   SELECT *
  //   FROM routines

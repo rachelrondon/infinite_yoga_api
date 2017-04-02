@@ -7,6 +7,8 @@ router.get('/:id', controller.showOne);
 
 router.get('/search', controller.search);
 
-router.get('/level', controller.level)
+router.get('/beginner', controller.beginner)
+router.get('/advanced', controller.advanced)
+
 
 module.exports = router;

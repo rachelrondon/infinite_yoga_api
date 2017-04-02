@@ -18,9 +18,17 @@ controller.showOne = (req, res) => {
   })
 }
 
-controller.level = (req, res) => {
+controller.beginner = (req, res) => {
   Routine
-  .findByLevel(req.body.level)
+  .findByLevel('Beginner')
+  .then(data => {
+    res.json(data);
+  })
+}
+
+controller.advanced = (req, res) => {
+  Routine
+  .findByLevel('Advanced')
   .then(data => {
     res.json(data);
   })
