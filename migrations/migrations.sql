@@ -15,7 +15,7 @@ CREATE TABLE moves (
   id BIGSERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   image VARCHAR(500) NOT NULL,
-  milliseconds VARCHAR(255) NOT NULL,
+  milliseconds INTEGER,
   audio VARCHAR(255) NOT NULL,
   image_credit VARCHAR(255) NOT NULL,
   routine_id INTEGER REFERENCES routines(id)
