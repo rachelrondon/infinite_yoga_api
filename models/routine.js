@@ -22,12 +22,6 @@ Routine.findByLevel = (level) => {
   [level]
   );
 }
- // return db.manyOrNone(`
- //   SELECT *
- //   FROM routines
- //   WHERE title LIKE $1
- //   `, [data])
- // }
 
 Routine.showAll = (routines) => {
   return db.manyOrNone(`
@@ -36,6 +30,16 @@ Routine.showAll = (routines) => {
     [routines]
   );
 };
+
+Routine.findByRandom = (random) => {
+  return db.one(`
+    SELECT routines.title, routines.level, moves.name, moves.image, moves.milliseconds, moves.audio
+    FROM routines
+    LEFT JOIN moves
+    on routine.id = $1 and moves.routine_id = $1`,
+    [random]
+  );
+}
 
 Routine.findById = (id) => {
   console.log(id);
@@ -47,6 +51,5 @@ Routine.findById = (id) => {
     [id]
   );
 }
-
 
 module.exports = Routine;
