@@ -26,7 +26,8 @@ Routine.findByLevel = (level) => {
 Routine.showAll = (routines) => {
   return db.manyOrNone(`
     SELECT *
-    FROM routines`,
+    FROM routines
+    ORDER BY id ASC`,
     [routines]
   );
 };
